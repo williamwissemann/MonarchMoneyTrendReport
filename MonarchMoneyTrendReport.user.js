@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         MonarchMoneyTrendReport
+// @name         Monarch Money Trend Report
 // @namespace    http://tampermonkey.net/
-// @version      1.01
+// @version      1.0.2
 // @description  Enhance Sankey information into Trend format
 // @author       Robert
 // @match        https://app.monarchmoney.com/*
