@@ -2349,9 +2349,9 @@ async function getAccountsData() {
 
 async function refreshAccountsData() {
     const options = callGraphQL({
-    operationName: 'Common_ForceRefreshAccountsQuery',
+    operationName: 'Common_ForceRefreshAccountsMutation',
     variables: {},
-      query: "query Common_ForceRefreshAccountsQuery {\n  hasAccountsSyncing\n}"
+    query: "mutation Common_ForceRefreshAccountsMutation {\n  forceRefreshAllAccounts {\n    success\n    errors {\n      ...PayloadErrorFields\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment PayloadErrorFields on PayloadError {\n  fieldErrors {\n    field\n    messages\n    __typename\n  }\n  message\n  code\n  __typename\n}"
     });
     return fetch(graphql, options)
     .then((response) => localStorage.setItem('MT:LastRefresh', getDates('s_FullDate')))
